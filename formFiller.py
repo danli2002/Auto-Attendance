@@ -36,5 +36,6 @@ submissions = {
 x = requests.post(url,data=submissions)
 # Prints the status of the operation. If it returns something like <Response [200]>, then the operation went through successfully.
 print(x)
+webbrowser.open("https://www.google.com",new=2)
 
 
