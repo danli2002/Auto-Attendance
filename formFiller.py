@@ -40,7 +40,7 @@ submissions = {
 }
 
 # Initiates a POST to the server
-x = requests.post(url,data=submissions)
+response = requests.post(url,data=submissions)
 
 # Prints the status of the operation.
 if response == '<Response [200]>':
@@ -48,6 +48,6 @@ if response == '<Response [200]>':
 else:
     print('Failure')
 
-	# success splash screen
+# success splash screen
 webbrowser.open('file://' + os.path.realpath("success.html"))
 
