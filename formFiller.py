@@ -8,13 +8,13 @@ Run the task in your command line using: python formFiller.py -u "https://docs.g
 
 import requests
 import argparse
+import webbrowser
+import os
+
 
 # Parses the URL from the given command line arguments. Not very useful at the moment, but when the script becomes more flexible for other forms, it will.
-ap = argparse.ArgumentParser()
-ap.add_argument("-u","--url",required=True,help="Specifies form URL")
-args = vars(ap.parse_args())
 
-url = args["url"]
+url = "https://docs.google.com/forms/d/e/1FAIpQLSfpe6jz-GIykefd3TOQ0pax7-PxsJWRaCrivZFOnkijA43seA/formResponse"
 
 '''
 
@@ -36,6 +36,5 @@ submissions = {
 x = requests.post(url,data=submissions)
 # Prints the status of the operation. If it returns something like <Response [200]>, then the operation went through successfully.
 print(x)
-webbrowser.open("https://www.google.com",new=2)
-
+webbrowser.open('file://' + os.path.realpath("success.html"))
 
