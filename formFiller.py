@@ -31,8 +31,11 @@ submissions = {
 }
 
 # Initiates a POST to the server
-x = requests.post(url,data=submissions)
+response = requests.post(url,data=submissions)
 # Prints the status of the operation. If it returns something like <Response [200]>, then the operation went through successfully.
-print(x)
+if response == '<Response [200]>':
+    print('Success')
+else:
+    print('Failure')
 webbrowser.open('file://' + os.path.realpath("success.html"))
 
