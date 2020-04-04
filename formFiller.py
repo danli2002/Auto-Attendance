@@ -51,6 +51,6 @@ if response == '<Response [200]>':
 else:
     print('Failure')
 
-	# success splash screen
+# success splash screen
 webbrowser.open('file://' + os.path.realpath("success.html"))
 
