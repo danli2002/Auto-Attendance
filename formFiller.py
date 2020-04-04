@@ -7,7 +7,6 @@ Run the task in your command line using: python formFiller.py -u "https://docs.g
 '''
 
 import requests
-import argparse
 import webbrowser
 import os
 
@@ -21,10 +20,9 @@ url = "https://docs.google.com/forms/d/e/1FAIpQLSfpe6jz-GIykefd3TOQ0pax7-PxsJWRa
 Entry IDs are HARDCODED. They will become more flexible in the future by smartly searching for more data entry fields.
 
 Please make sure that for the grade level entry, the entry is CASE SENSITIVE. They must be written as formatted: Freshman | Sophomore | Junior | Senior
-
-Dictionary of all the entry values
-
 '''
+
+#Dictionary of all the entry values
 
 submissions = {
 "entry.37835231":"Daniel", 
