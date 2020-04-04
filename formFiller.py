@@ -21,25 +21,22 @@ Entry IDs are HARDCODED. They will become more flexible in the future by smartly
 Please make sure that for the grade level entry, the entry is CASE SENSITIVE. They must be written as formatted: Freshman | Sophomore | Junior | Senior
 
 '''
-user_data = []
 
+# Read user info from config file
 with open('file://' + os.path.realpath("config.txt"),"r") as config:
-	for line in config:
-		user_data.append(line)
-	
+	user_data = config.read().splitlines()
+
 grade_levels = {
-"9":"Freshman",
-"10":"Sophomore",
-"11":"Junior",
-"12":"Senior",
+    "9": "Freshman",
+    "10": "Sophomore",
+    "11": "Junior",
+    "12": "Senior",
 }
 
-#Dictionary of all the entry values
-
 submissions = {
-"entry.37835231":user_data[0], 
-"entry.477309531":user_data[1],
-"entry.793669177":grade_levels.get(user_data[2])
+    "entry.37835231": user_data[0], 
+    "entry.477309531": user_data[1],
+    "entry.793669177": grade_levels.get(user_data[2]),
 }
 
 # Initiates a POST to the server
