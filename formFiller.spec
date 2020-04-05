@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['formFiller.py'],
-             pathex=['C:\\Attendance'],
+             pathex=['D:\\SteamLibrary\\steamapps\\sourcemods\\Auto-Attendance'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -19,19 +19,15 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           [],
-          exclude_binaries=True,
           name='formFiller',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True )
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=True,
-               upx_exclude=[],
-               name='formFiller')
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=True , icon='attendance_icon_13_8Op_icon.ico')
