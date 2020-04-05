@@ -3,7 +3,6 @@
 This is an early version of the PHS Auto Attendance Script
 Just specify in the config.txt your info
 
-
 '''
 
 import requests
@@ -23,36 +22,32 @@ Please make sure that for the grade level entry, the entry is CASE SENSITIVE. Th
 '''
 user_data = []
 
-with open(os.path.realpath("config.txt"),"r") as config:
-	user_data = config.read().splitlines()
-	
+with open(os.path.realpath('config.txt'), 'r') as config:
+    user_data = config.read().splitlines()
+
 grade_levels = {
-"9":"Freshman",
-"10":"Sophomore",
-"11":"Junior",
-"12":"Senior",
+    '9': 'Freshman',
+    '10': 'Sophomore',
+    '11': 'Junior',
+    '12': 'Senior',
 }
 
 # Dictionary of all the entry values
 # Test entries: entry.2005620554 , entry.1624489572 , entry.839337160
 # Real entries: entry.37835231 , entry.477309531 , entry.793669177
 submissions = {
-"entry.37835231":user_data[0], 
-"entry.477309531":user_data[1],
-"entry.793669177":grade_levels.get(user_data[2])
+    'entry.37835231': user_data[0],
+    'entry.477309531': user_data[1],
+    'entry.793669177': grade_levels[user_data[2]],
 }
 
 # Initiates a POST to the server
-response = requests.post(url,data=submissions)
+response = requests.post(url, data=submissions)
 
 # Prints the status of the operation.
 if response.status_code == 200:
     print('Success')
     # success splash screen
-    webbrowser.open('file://' + os.path.realpath("success.html"))
+    webbrowser.open('file://' + os.path.realpath('success.html'))
 else:
     print('Failure')
-
-
-
-
