@@ -7,6 +7,8 @@ Filling out this exact same google form each day can be very annoying:
 ## Features
 This script allows users to easily submit their attendance, and it directly submits to the google form so it should work even if Powerschool Learning is down. A response is returned to the user to confirm a successful run.
 
+Simply edit the included config.txt with your credentials, save it, and you're good to go.
+
 ## Contributors
 stezhd\
 dchen327
