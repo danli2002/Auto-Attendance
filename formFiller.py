@@ -20,6 +20,7 @@ with open(('config.txt'), 'r') as config:
 
 user_data = [data.strip() for data in user_data]  # ensure no leading/trailing spaces in data
 
+# added some new stuff for the new school year
 if len(user_data) != 4:  # data doesn't have 3 lines
     print('There was an error reading from the config file. Please ensure that the file contains your first name, last name, and grade number on 3 separate lines.')
 else:
@@ -30,9 +31,7 @@ else:
         '12': 'Grade 12',
     }
 
-    # Dictionary of all the entry values
-    # Test entries: entry.2005620554 , entry.1624489572 , entry.839337160
-    # Real entries: entry.37835231 , entry.477309531 , entry.793669177
+
     submissions = {
         'emailAddress': user_data[0],
         'entry.1657521344': user_data[1],
